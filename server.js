@@ -60,3 +60,14 @@ const express = require('express');
   };
   
   // Route to get questions
+
+  app.get('/questions', (req, res) => {
+    res.json(data.questions);
+  });
+  app.get('/students', (req, res) => { res.json(data.students); });
+  app.get('/questions/mats', (req, res) => { const matsQuestions = data.questions[0].mats; res.json(matsQuestions); });
+  
+  
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+  });
